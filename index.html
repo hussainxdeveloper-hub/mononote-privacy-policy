@@ -240,6 +240,16 @@
   <li>Subscriptions can be managed through Google Play Store &gt; Subscriptions.</li>
 </ul>
 
+<h2>18A. Sign-In Required for Premium Subscriptions</h2>
+<p>To purchase a Premium subscription, you must be signed in with a Google account. This requirement exists for the following reasons:</p>
+<ul>
+  <li><strong>Subscription linking:</strong> Your subscription is tied to your Google account (via your Supabase user ID), not to a specific device. This allows you to restore and access Premium features on any device you sign in to.</li>
+  <li><strong>Cross-device access:</strong> Without a signed-in account, we have no way to reliably identify you across devices or app reinstalls to restore your entitlement.</li>
+  <li><strong>Entitlement management:</strong> RevenueCat links your purchase to your stable account ID. Anonymous purchases cannot be reliably restored or transferred.</li>
+</ul>
+<p>If you attempt to purchase without being signed in, you will be prompted to sign in with Google first. You may continue using all free features of MonoNote without signing in — sign-in is only required at the point of purchase.</p>
+<p><strong>Premium status is account-based.</strong> If you sign out, Premium features will be unavailable until you sign back in to the same Google account. Your subscription itself remains active and will be fully restored upon sign-in.</p>
+
 <h2>19. Data Retention</h2>
 <p>We keep your data for the following periods:</p>
 <ul>
