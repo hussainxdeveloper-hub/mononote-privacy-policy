@@ -56,6 +56,7 @@
   <li><strong>App Usage Events:</strong> Anonymous events like "note created" or "todo created" sent to Firebase Analytics. No note content is ever included.</li>
   <li><strong>Crash Reports:</strong> Automatic crash logs sent to Firebase Crashlytics to help us fix bugs. These contain stack traces and device state — never your personal content.</li>
   <li><strong>Subscription Status:</strong> Whether you have an active Premium subscription, managed by RevenueCat.</li>
+  <li><strong>Advertising Data (Free Users Only):</strong> If you are not a Premium subscriber, Google AdMob collects device/advertising identifiers, IP address, and app interaction data to serve and measure ads. See Section 8 below for details. Premium subscribers never see ads and this data is not collected from them for advertising purposes.</li>
 </ul>
 
 <h3>1.3 Cloud Sync Data (Premium Users Only — Optional)</h3>
@@ -67,7 +68,7 @@
 <h2>2. How We Collect It</h2>
 <ul>
   <li><strong>Data you give us directly:</strong> When you sign in with Google, create notes, set reminders, or configure app settings.</li>
-  <li><strong>Data collected automatically:</strong> Through third-party services like Firebase and RevenueCat, and device info APIs when you use MonoNote.</li>
+  <li><strong>Data collected automatically:</strong> Through third-party services like Firebase, RevenueCat, and Google AdMob, and device info APIs when you use MonoNote.</li>
 </ul>
 
 <h2>3. Local Storage</h2>
@@ -113,6 +114,7 @@
 <h2>7. Third-Party Services</h2>
 <p>MonoNote uses the following third-party services. Each has its own privacy policy governing data handling:</p>
 <ul>
+  <li><strong>Google AdMob</strong> (<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Privacy Policy</a>) — Displays ads to free (non-Premium) users. Collects advertising identifiers, IP address, and app interaction data for ad delivery, personalization, analytics, and fraud prevention. See Section 8 for full details.</li>
   <li><strong>Supabase</strong> (<a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>) — Cloud database for authentication and sync.</li>
   <li><strong>Firebase Analytics</strong> (<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>) — Usage analytics and event tracking.</li>
   <li><strong>Firebase Crashlytics</strong> (<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>) — Crash reporting.</li>
@@ -125,7 +127,36 @@
   <li><strong>Package Info Plus</strong> — App version display.</li>
 </ul>
 
-<h2>8. Firebase Analytics Events</h2>
+<h2>8. Advertising (Google AdMob)</h2>
+<p>MonoNote is free to download and use. To support the free tier, we display ads provided by <strong>Google AdMob</strong> to non-Premium users only. <strong>Premium subscribers never see ads anywhere in the app.</strong></p>
+
+<h3>8.1 What AdMob Collects</h3>
+<p>When you are shown an ad, Google Mobile Ads SDK automatically collects and shares the following, for advertising, analytics, and fraud-prevention purposes:</p>
+<ul>
+  <li><strong>IP address</strong> — used to estimate your general (approximate) location.</li>
+  <li><strong>Advertising identifiers</strong> — your Android Advertising ID and App Set ID, and any other identifiers tied to signed-in accounts on your device.</li>
+  <li><strong>App interaction data</strong> — events like app launches, ad taps, and ad video views.</li>
+  <li><strong>Diagnostic information</strong> — app/SDK performance data such as launch time and stability metrics.</li>
+</ul>
+<p>All data collected by the Google Mobile Ads SDK is encrypted in transit using TLS.</p>
+
+<h3>8.2 Where Ads Appear</h3>
+<p>Ads may appear as banner ads (on the Home and To-Do screens, and on all Trash screens), interstitial ads (for example, after unlocking the Password Vault or changing your theme), and rewarded video ads (for example, when setting a reminder, opening Safe Box, or performing a manual backup/restore). We apply frequency limits so ads are not shown excessively — for example, some ad types are capped to a limited number of times per day and a minimum time between ads.</p>
+
+<h3>8.3 Ad Personalization Choices</h3>
+<p>You can control ad personalization and your advertising identifier directly from your device:</p>
+<ul>
+  <li>On Android, go to <strong>Settings &gt; Google &gt; Ads</strong> to opt out of personalized advertising or to reset your Advertising ID.</li>
+  <li>Opting out of ad personalization does not stop ads from appearing — it means ads you see will be less tailored to your interests.</li>
+</ul>
+
+<h3>8.4 Children and Ads</h3>
+<p>Consistent with Section 21 (Children's Privacy) below, we do not knowingly serve personalized ads to children under 13. If you are a parent or guardian with concerns about ads shown to a child using MonoNote, please contact us at <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a>.</p>
+
+<h3>8.5 More Information</h3>
+<p>For full details on what Google's advertising products collect and how that data is used, see Google's <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Ads Privacy &amp; Terms</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+
+<h2>9. Firebase Analytics Events</h2>
 <p>MonoNote logs the following events via Firebase Analytics:</p>
 <ul>
   <li><strong>note_created</strong> — When you create a new note.</li>
@@ -135,10 +166,10 @@
 </ul>
 <p>No personal or sensitive content (note text, passwords, etc.) is included in these events.</p>
 
-<h2>9. Firebase Crashlytics</h2>
+<h2>10. Firebase Crashlytics</h2>
 <p>Firebase Crashlytics collects crash reports including stack traces, device state, and app version to help us fix bugs and improve stability. No personal data is intentionally collected in crash reports.</p>
 
-<h2>10. RevenueCat (In-App Purchases)</h2>
+<h2>11. RevenueCat (In-App Purchases)</h2>
 <p>RevenueCat manages in-app purchases and subscription status. RevenueCat receives:</p>
 <ul>
   <li>Your user ID (for linking purchases across devices)</li>
@@ -147,13 +178,13 @@
 </ul>
 <p>RevenueCat handles all payment processing. MonoNote never accesses or stores your credit card or payment details.</p>
 
-<h2>11. Supabase (Authentication and Cloud Sync)</h2>
+<h2>12. Supabase (Authentication and Cloud Sync)</h2>
 <p>Supabase provides authentication (via Google Sign-In) and cloud sync. When you sign in, Supabase stores your email and user ID. When sync is enabled, your notes, to-do lists, and password entries (encrypted) are stored on Supabase servers.</p>
 
-<h2>12. Google Sign-In</h2>
+<h2>13. Google Sign-In</h2>
 <p>Google Sign-In is used for authentication, enabling cloud sync and Google Drive backup. We receive your email address and profile information when you sign in. We also request the <strong>drive.appdata</strong> scope to back up and restore your data to a private app-specific folder in Google Drive.</p>
 
-<h2>13. Permissions</h2>
+<h2>14. Permissions</h2>
 <p>MonoNote requests the following Android permissions:</p>
 <ul>
   <li><strong>com.android.vending.BILLING</strong> — Required for in-app purchases (subscriptions) via Google Play.</li>
@@ -174,7 +205,7 @@
   <li><strong>WAKE_LOCK</strong> — To keep the device awake during background tasks (auto backup).</li>
 </ul>
 
-<h2>14. Biometric Data</h2>
+<h2>15. Biometric Data</h2>
 <p>MonoNote uses biometric authentication (fingerprint or face unlock) for two features:</p>
 <ul>
   <li><strong>App Lock:</strong> Lock the entire app behind biometric authentication.</li>
@@ -182,7 +213,7 @@
 </ul>
 <p>Biometric authentication is handled entirely by your device's <strong>LocalAuthentication</strong> API. MonoNote never stores, transmits, or has access to your biometric data. Only a simple on/off preference is stored locally.</p>
 
-<h2>15. Media and Files (Safe Box)</h2>
+<h2>16. Media and Files (Safe Box)</h2>
 <p>The Safe Box feature lets you import photos and videos into a private app directory that is not accessible by gallery apps or file managers. Here is how it works:</p>
 <ul>
   <li>The original file is copied to a private directory within the app storage.</li>
@@ -192,7 +223,7 @@
   <li>You can restore media back to your device gallery at any time.</li>
 </ul>
 
-<h2>16. Notifications</h2>
+<h2>17. Notifications</h2>
 <p>All notifications in MonoNote are <strong>local only</strong>. They are scheduled on your device using Flutter Local Notifications and are never sent to our servers or anyone else. The following notification data is stored locally:</p>
 <ul>
   <li>Note title and content snippet (for note reminders)</li>
@@ -200,7 +231,7 @@
   <li>Scheduled reminder time (converted to timezone-aware format)</li>
 </ul>
 
-<h2>17. In-App Purchases and Subscriptions</h2>
+<h2>18. In-App Purchases and Subscriptions</h2>
 <p>MonoNote offers premium subscriptions with a 3-day free trial. All payment processing is handled by <strong>RevenueCat</strong> and <strong>Google Play Store</strong>:</p>
 <ul>
   <li>MonoNote never sees, stores, or processes credit card or payment information.</li>
@@ -209,17 +240,18 @@
   <li>Subscriptions can be managed through Google Play Store &gt; Subscriptions.</li>
 </ul>
 
-<h2>18. Data Retention</h2>
+<h2>19. Data Retention</h2>
 <p>We keep your data for the following periods:</p>
 <ul>
   <li><strong>Your content (notes, to-dos, passwords, media):</strong> Kept for as long as you use MonoNote plus 12 months after account deletion, unless you ask us to delete it sooner.</li>
   <li><strong>Analytics and crash reports:</strong> Firebase Analytics keeps data for up to 24 months. Crash reports are kept for up to 90 days.</li>
+  <li><strong>Advertising data:</strong> Data collected by Google AdMob (advertising ID, IP address, interaction data) is retained according to Google's own retention policies, which we do not control. See Google's <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Ads Privacy &amp; Terms</a> for details.</li>
   <li><strong>Subscription Data:</strong> Kept while your subscription is active. After cancellation, basic purchase history may be kept for legal and accounting reasons.</li>
   <li><strong>Trashed Items:</strong> Soft-deleted notes, passwords, and media are automatically purged after 7 days (free users) or 30 days (premium users).</li>
   <li><strong>Aggregated and Anonymized Data:</strong> Kept indefinitely since it no longer identifies you.</li>
 </ul>
 
-<h2>19. Data Deletion and Account Deletion</h2>
+<h2>20. Data Deletion and Account Deletion</h2>
 <p>You can delete your data in the following ways:</p>
 <ul>
   <li><strong>Individual Deletion:</strong> Delete individual notes, to-do lists, password entries, or Safe Box media directly within the app.</li>
@@ -234,17 +266,17 @@
   <li><strong>Manual Deletion:</strong> Contact <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a> to request deletion of your personal data.</li>
 </ul>
 
-<h2>20. Children's Privacy</h2>
+<h2>21. Children's Privacy</h2>
 <p>MonoNote is a general-purpose notes and productivity app suitable for all ages. Anyone can use it to write notes, make to-do lists, and organize their thoughts — including younger users with the guidance of a parent or guardian.</p>
-<p>However, because MonoNote uses third-party services that collect limited anonymous data (such as Firebase Analytics and Google Sign-In), we are required by law (COPPA in the US and similar laws in other regions) to set a minimum age of <strong>13 years</strong> for independent use of the app and especially for features that involve data collection, such as Google Sign-In, Cloud Sync, and Premium purchases.</p>
+<p>However, because MonoNote uses third-party services that collect limited anonymous data (such as Firebase Analytics, Google Sign-In, and Google AdMob for free users), we are required by law (COPPA in the US and similar laws in other regions) to set a minimum age of <strong>13 years</strong> for independent use of the app and especially for features that involve data collection, such as Google Sign-In, Cloud Sync, viewing ads, and Premium purchases.</p>
 <p>Here is what this means in practice:</p>
 <ul>
   <li><strong>Under 13:</strong> Children under 13 can use the core offline features of MonoNote (writing notes, to-do lists, using the password vault) under the supervision of a parent or guardian. The parent or guardian must agree to these Terms and the Privacy Policy on the child's behalf. Children under 13 should not sign in with Google or enable Cloud Sync.</li>
   <li><strong>13 and above:</strong> You can use all features of MonoNote independently, including Google Sign-In, Cloud Sync, and Premium subscriptions.</li>
 </ul>
-<p>We do not knowingly collect personal data from children under 13 without verifiable parental consent. If we discover that a child under 13 has signed in and provided personal information without parental consent, we will promptly delete that data. If you are a parent or guardian and believe your child has done this, please contact us at <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a>.</p>
+<p>We do not knowingly collect personal data from children under 13 without verifiable parental consent, and we do not knowingly serve personalized ads to children under 13. If we discover that a child under 13 has signed in and provided personal information without parental consent, we will promptly delete that data. If you are a parent or guardian and believe your child has done this, please contact us at <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a>.</p>
 
-<h2>21. Security Measures</h2>
+<h2>22. Security Measures</h2>
 <p>MonoNote uses the following security measures to protect your data:</p>
 <ul>
   <li><strong>AES-256 Encryption:</strong> Passwords stored in the vault are encrypted with AES-256-CBC using randomly generated IVs.</li>
@@ -257,39 +289,39 @@
   <li><strong>Secure File Deletion:</strong> Original media files are deleted from public storage using PhotoManager API after import to Safe Box.</li>
 </ul>
 
-<h2>22. Data Breach Notification</h2>
+<h2>23. Data Breach Notification</h2>
 <p>If a data breach occurs that affects your personal data, we will notify you as required by law, including information about the nature of the breach and the steps being taken to address it.</p>
 
-<h2>23. International Data Transfers</h2>
+<h2>24. International Data Transfers</h2>
 <p>Your data may be transferred to and processed in countries other than your country of residence, including outside the European Economic Area (EEA). Where required by law, we use appropriate safeguards including Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
 
-<h2>24. Your Rights</h2>
+<h2>25. Your Rights</h2>
 <p>You have the following rights regarding your personal data:</p>
 <ul>
   <li><strong>Right to Access:</strong> Request a copy of the personal data we hold about you.</li>
   <li><strong>Right to Correction:</strong> Ask us to fix inaccurate or incomplete data.</li>
   <li><strong>Right to Deletion:</strong> Ask us to delete your personal data, unless we are legally required to keep it.</li>
-  <li><strong>Right to Withdraw Consent:</strong> If you previously agreed to something (like enabling sync), you can change your mind at any time.</li>
+  <li><strong>Right to Withdraw Consent:</strong> If you previously agreed to something (like enabling sync or ad personalization), you can change your mind at any time.</li>
   <li><strong>Right to Data Portability:</strong> Request your data in a structured, commonly used format.</li>
   <li><strong>Right to Object:</strong> Object to processing of your personal data for direct marketing purposes.</li>
 </ul>
 <p>To exercise these rights, contact <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a>.</p>
 
-<h2>25. California Privacy Rights (CCPA/CPRA)</h2>
+<h2>26. California Privacy Rights (CCPA/CPRA)</h2>
 <p>If you are a California resident, you have the following additional rights:</p>
 <ul>
   <li><strong>Right to Know:</strong> Request disclosure of the categories and specific pieces of personal information we have collected about you.</li>
   <li><strong>Right to Delete:</strong> Request deletion of personal information we have collected.</li>
-  <li><strong>Right to Opt-Out:</strong> Opt out of the sale or sharing of personal information (MonoNote does not sell personal information).</li>
+  <li><strong>Right to Opt-Out:</strong> Opt out of the sale or sharing of personal information. Note that some advertising activity via Google AdMob may be considered "sharing" under CPRA for cross-context behavioral advertising purposes; you can limit this using your device's ad personalization settings described in Section 8.3.</li>
   <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your CCPA/CPRA rights.</li>
 </ul>
 <p>To exercise your CCPA/CPRA rights, contact <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a>.</p>
 
-<h2>26. Changes to This Privacy Policy</h2>
+<h2>27. Changes to This Privacy Policy</h2>
 <p>We may update this Privacy Policy from time to time. If we make material changes, we will post the updated policy with an effective date. Where required by law, we will ask for your consent before the changes take effect.</p>
 <p>Previous versions of this Privacy Policy are available upon request by contacting <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a>.</p>
 
-<h2>27. Contact Information</h2>
+<h2>28. Contact Information</h2>
 <p>Have a question or concern about your privacy? We'd love to hear from you.</p>
 <ul>
   <li><strong>Email:</strong> <a href="mailto:hussainxdeveloper@gmail.com">hussainxdeveloper@gmail.com</a></li>
@@ -297,11 +329,11 @@
   <li><strong>App:</strong> MonoNote</li>
 </ul>
 
-<h2>28. Your Consent</h2>
+<h2>29. Your Consent</h2>
 <p>Where we need your consent, you give it by turning on the feature (for example, enabling biometric authentication, enabling sync, or granting media permissions). You can withdraw consent at any time without affecting anything that was done before.</p>
 <p>You can stop data collection at any time by uninstalling MonoNote. Note that this does not delete data already synced or backed up — contact us to request full deletion.</p>
 
-<p>This privacy policy was last updated on 2026-07-25</p>
+<p>This privacy policy was last updated on 2026-08-08</p>
 
 </body>
 </html>
