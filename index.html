@@ -60,7 +60,7 @@
 </ul>
 
 <h3>1.3 Cloud Sync Data (Premium Users Only — Optional)</h3>
-<p>If you are a Premium subscriber and choose to enable Cloud Sync, your notes and encrypted password entries are synced to Supabase servers. This is entirely optional and can be disabled at any time in Settings. Password data is encrypted on your device before being sent — we never see your plaintext passwords.</p>
+<p>If you are a Premium subscriber and choose to enable Cloud Sync, your notes are synced to servers. This is entirely optional and can be disabled at any time in Settings. Password data is encrypted on your device before being sent — we never see your plaintext passwords.</p>
 
 <h3>1.4 Google Drive Backup (Optional)</h3>
 <p>If you use the Backup feature, your data is saved to a hidden private folder in your own Google Drive account (app data folder — not visible in your Drive). Only you can access this. We do not have access to your Google Drive files.</p>
@@ -87,8 +87,7 @@
 <p>When you have an active premium subscription and enable sync, your data is synced to <strong>Supabase</strong> cloud servers. We use the following database tables:</p>
 <ul>
   <li><strong>notes:</strong> Synced notes data (content, title, timestamps, deletion status)</li>
-  <li><strong>password_entries:</strong> Password vault entries with end-to-end encryption (passwords are AES-256 encrypted before being sent to the server)</li>
-  <li><strong>sync_devices:</strong> Registered device information (device ID, device name, last sync timestamp)</li>
+ <li><strong>sync_devices:</strong> Registered device information (device ID, device name, last sync timestamp)</li>
 </ul>
 <p>Sync is only available to premium users and can be disabled at any time from the Settings screen.</p>
 
@@ -106,7 +105,6 @@
 <p>MonoNote uses <strong>AES-256 encryption (CBC mode)</strong> to protect sensitive data:</p>
 <ul>
   <li><strong>Password Vault:</strong> The Hive box for password entries is encrypted with HiveAesCipher using a key stored in flutter_secure_storage.</li>
-  <li><strong>Sync Encryption:</strong> Passwords synced to Supabase are encrypted end-to-end using AES-256-CBC with a randomly generated 16-byte IV per encryption call. The encryption key is derived from your user ID. Encrypted data is stored in the format "ivBase64:ciphertextBase64".</li>
   <li><strong>Safe Box / Vault Photos:</strong> Media files stored in the Safe Box are copied to a private app directory with a .nomedia file to prevent gallery scanning.</li>
   <li><strong>Secure Storage:</strong> Master password hashes, PIN hashes, pattern hashes, vault encryption keys, and security answer hashes are stored using flutter_secure_storage (Android EncryptedSharedPreferences).</li>
 </ul>
